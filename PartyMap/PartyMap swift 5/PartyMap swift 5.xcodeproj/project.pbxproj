@@ -115,8 +115,8 @@
 		8B6784E122A9D42C009AC3A7 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				8B6784E822A9D629009AC3A7 /* CategoriesTableViewCell.swift */,
 				8B6784EA22A9D63A009AC3A7 /* CategoriesTableViewController.swift */,
+				8B6784E822A9D629009AC3A7 /* CategoriesTableViewCell.swift */,
 				8B6784E422A9D45F009AC3A7 /* Categories.swift */,
 			);
 			path = Settings;

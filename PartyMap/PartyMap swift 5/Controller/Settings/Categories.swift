@@ -7,21 +7,43 @@
 //
 
 import Foundation
-import  UIKit
+import UIKit
 
 struct Categories {
-    var imageCategory: UIImage
-    var titleCategory: String
-    
+
+    var imageCategory: UIImage?
+    var titleCategory: String?
+
+//    init(imageCategory: UIImage, titleCategory: String ) {
+//        self.imageCategory = imageCategory
+//        self.titleCategory = titleCategory
+//    }
+//    var categoriesList: [Categories] = []
+//    func fetch() {
+//        categoriesList = Categories.fetchCategories()
+//    }
+
     static func fetchCategories() -> [Categories] {
-        let icon1 = Categories(imageCategory: #imageLiteral(resourceName: "museum1"), titleCategory: "Museum")
-        let icon2 = Categories(imageCategory: #imageLiteral(resourceName: "concert"), titleCategory: "Concert")
-        let icon3 = Categories(imageCategory: #imageLiteral(resourceName: "disco-ball"), titleCategory: "Club")
-        let icon4 = Categories(imageCategory: #imageLiteral(resourceName: "cocktail"), titleCategory: "Bar")
-        let icon5 = Categories(imageCategory: #imageLiteral(resourceName: "cinema"), titleCategory: "Cinema")
-        let icon6 = Categories(imageCategory: #imageLiteral(resourceName: "flame"), titleCategory: "Others")
-    
+
+        var image = UIImage(named: "sushi2")
+
+        let icon1 = Categories(imageCategory: image!, titleCategory: "Museum")
+        let icon2 = Categories(imageCategory: image!, titleCategory: "Concert")
+        let icon3 = Categories(imageCategory: image!, titleCategory: "Club")
+        let icon4 = Categories(imageCategory: image!, titleCategory: "Bar")
+        let icon5 = Categories(imageCategory: image!, titleCategory: "Cinema")
+        let icon6 = Categories(imageCategory: image!, titleCategory: "Others")
+
     return [icon1, icon2, icon3, icon4, icon5, icon6]
     }
+
 }
+
+
+   
+    
+
+
+
+
 

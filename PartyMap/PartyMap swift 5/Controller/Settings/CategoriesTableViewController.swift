@@ -10,25 +10,36 @@ import UIKit
 
 class CategoriesTableViewController: UITableViewController {
 
-    
-    var categoriesList = [Categories]()
-    
-    
-    func createStule() {
-    
-        self.view.backgroundColor = .black
-        self.navigationController?.title = "Categories"
-        registerForPreviewing(with: <#T##UIViewControllerPreviewingDelegate#>, sourceView: <#T##UIView#>)
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    var categoriesList = [Categories]()
    
+    func createStule() {
+        self.view.backgroundColor = .black
+        self.tableView.separatorStyle = .none
+        self.navigationController?.navigationBar.backgroundColor = .blue
+        self.navigationController?.title = "Categories"
+        self.tableView.register(CategoriesTableViewCell.self, forCellReuseIdentifier: CategoriesTableViewCell.reusIdentifier)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
     
-    
+    func set(cells: [Categories]) {
+        self.categoriesList = cells
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        createStule()
+        set(cells: Categories.fetchCategories())
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+       //  self.clearsSelectionOnViewWillAppear = true
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -38,20 +49,20 @@ class CategoriesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return categoriesList.count
     }
+    
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoriesTableViewCell.reusIdentifier, for: indexPath) as! CategoriesTableViewCell
-        
-       
-
+        cell.mainImageView.image = categoriesList[indexPath.row].imageCategory
+        cell.nameLabel.text = categoriesList[indexPath.row].titleCategory
         return cell
     }
     
@@ -100,5 +111,5 @@ class CategoriesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+   
 }

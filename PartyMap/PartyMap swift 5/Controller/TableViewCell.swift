@@ -17,7 +17,6 @@ class TableViewCell: UITableViewCell {
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
-        
         return iv
     }()
     

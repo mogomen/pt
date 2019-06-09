@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // set root view controller which is container and container init map view and side menu
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootViewController = ContainerViewController()
-        window?.rootViewController = rootViewController
+        var navVC = UINavigationController(rootViewController: rootViewController)
+        navVC.isNavigationBarHidden = true
+        window?.rootViewController = navVC
         window?.makeKeyAndVisible()
         return true
     }

@@ -10,8 +10,45 @@ import UIKit
 
 class CategoriesTableViewCell: UITableViewCell {
 
-    let reusIdentifier = "CategoriesTableViewCell"
+   static let reusIdentifier = "CategoriesTableViewCell"
     
+    let mainImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: CategoriesTableViewCell.reusIdentifier)
+        addSubview(mainImageView)
+        addSubview(nameLabel)
+        
+        backgroundColor = .black
+        mainImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        mainImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 65).isActive = true
+        
+        mainImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        mainImageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        // myLabel constaints
+        nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        nameLabel.leadingAnchor.constraint(equalTo: mainImageView.trailingAnchor, constant: 12).isActive = true
+        
+    }
+       
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

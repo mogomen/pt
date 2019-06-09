@@ -10,6 +10,8 @@ import UIKit
 
 class SideMenuTableViewController: UITableViewController {
     
+    var categoriesTableViewController: CategoriesTableViewController!
+    
     func  createTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -19,8 +21,11 @@ class SideMenuTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        categoriesTableViewController = CategoriesTableViewController()
         createTableView()
 
+        
+        
                 // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -47,7 +52,18 @@ class SideMenuTableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 2 {
+            print("zero")
+            let vc = categoriesTableViewController
+            self.navigationController?.pushViewController(vc!, animated: true)
+//            let storyboard = UIStoryboard(name: "MainView", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController")
+//            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -93,4 +109,12 @@ class SideMenuTableViewController: UITableViewController {
     }
     */
 
+}
+
+private extension UIStoryboard {
+    static func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "MainView", bundle: Bundle.main) }
+    
+    static func CategoriesTableViewController() -> CategoriesTableViewController? {
+        return mainStoryboard().instantiateViewController(withIdentifier: "CategoriesTableViewController") as? CategoriesTableViewController
+    }
 }
