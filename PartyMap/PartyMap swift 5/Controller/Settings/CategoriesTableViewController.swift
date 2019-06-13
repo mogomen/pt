@@ -23,11 +23,19 @@ class CategoriesTableViewController: UITableViewController {
     func createStule() {
         self.view.backgroundColor = .black
         self.tableView.separatorStyle = .none
-        self.navigationController?.navigationBar.backgroundColor = .blue
-        self.navigationController?.title = "Categories"
+        //self.navigationController?.navigationBar.backgroundColor = .black
+        self.title = "Categories"
         self.tableView.register(CategoriesTableViewCell.self, forCellReuseIdentifier: CategoriesTableViewCell.reusIdentifier)
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+       self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) // makes bar transparent
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
+        self.navigationItem.title = "Categories"
+    
+        
     }
     
     func set(cells: [Categories]) {

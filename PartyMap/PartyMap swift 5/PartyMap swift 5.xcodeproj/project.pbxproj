@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B676A9522B2F70A000299F4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B676A9422B2F70A000299F4 /* Event.swift */; };
 		8B6784B622A69F60009AC3A7 /* LinkGalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6784B522A69F60009AC3A7 /* LinkGalleryCollectionViewCell.swift */; };
 		8B6784B822A69F78009AC3A7 /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6784B722A69F78009AC3A7 /* LinkModel.swift */; };
 		8B6784BA22A6A081009AC3A7 /* LinkGalleryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6784B922A6A081009AC3A7 /* LinkGalleryCollectionView.swift */; };
@@ -48,10 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B676A9422B2F70A000299F4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8B6784B522A69F60009AC3A7 /* LinkGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		8B6784B722A69F78009AC3A7 /* LinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
 		8B6784B922A6A081009AC3A7 /* LinkGalleryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkGalleryCollectionView.swift; sourceTree = "<group>"; };
-		8B6784E422A9D45F009AC3A7 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		8B6784E422A9D45F009AC3A7 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Categories.swift; path = ../Controller/Settings/Categories.swift; sourceTree = "<group>"; };
 		8B6784E822A9D629009AC3A7 /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		8B6784EA22A9D63A009AC3A7 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		8B6FCC2F2288872100C87C40 /* MenuView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuView.storyboard; sourceTree = "<group>"; };
@@ -102,6 +104,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B676A9622B302EF000299F4 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		8B6784B222A69ECA009AC3A7 /* LinkGalleryCollection */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +126,6 @@
 			children = (
 				8B6784EA22A9D63A009AC3A7 /* CategoriesTableViewController.swift */,
 				8B6784E822A9D629009AC3A7 /* CategoriesTableViewCell.swift */,
-				8B6784E422A9D45F009AC3A7 /* Categories.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -196,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				8BBC75972281CD6100F85E0B /* SideMenuModel.swift */,
+				8B6784E422A9D45F009AC3A7 /* Categories.swift */,
+				8B676A9422B2F70A000299F4 /* Event.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,6 +213,7 @@
 		8BBC759122818D5800F85E0B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8B676A9622B302EF000299F4 /* New Group */,
 				8B6784E122A9D42C009AC3A7 /* Settings */,
 				8B6784B222A69ECA009AC3A7 /* LinkGalleryCollection */,
 				8B95E1BD22920CFE00D8172F /* SideMenuViewController */,
@@ -360,6 +371,7 @@
 				8BA030052284C95800EA866B /* ContainerViewController.swift in Sources */,
 				8B6784E522A9D45F009AC3A7 /* Categories.swift in Sources */,
 				8BBC756722818C3300F85E0B /* PartyMap_swift_5.xcdatamodeld in Sources */,
+				8B676A9522B2F70A000299F4 /* Event.swift in Sources */,
 				8BBC759A2281EDA300F85E0B /* TableViewCell.swift in Sources */,
 				8BBC755F22818C3300F85E0B /* AppDelegate.swift in Sources */,
 				8B6784B622A69F60009AC3A7 /* LinkGalleryCollectionViewCell.swift in Sources */,
