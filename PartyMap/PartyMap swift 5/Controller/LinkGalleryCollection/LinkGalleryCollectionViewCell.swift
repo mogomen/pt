@@ -39,8 +39,8 @@ class LinkGalleryCollectionViewCell: UICollectionViewCell {
         // mainImageView constraints
         mainImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         mainImageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        mainImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        mainImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/3).isActive = true
+        mainImageView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
+        mainImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8).isActive = true
         
     }
     

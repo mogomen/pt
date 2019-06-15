@@ -11,36 +11,33 @@ import UIKit
 class EventInfoViewController: UIViewController {
 
     // Mark: Outlest
-
-    @IBOutlet weak var placeImageButton: UIButton!
+    @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var namePlaceLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var adressPlaceLabel: UILabel!
-    @IBOutlet weak var seeMoreImagesButton: UIButton!
-    @IBOutlet weak var aboutPlaceTextField: UITextView!
+    @IBOutlet weak var categoryEventLabel: UILabel!
+    @IBOutlet weak var dateEventLabel: UILabel!
+    @IBOutlet weak var adressEventLabel: UILabel!
+    @IBOutlet weak var albumEventButton: UIButton!
+    @IBOutlet weak var aboutEventTextView: UITextView!
     @IBOutlet weak var addToFavoritesButton: UIButton!
     
     private var galleryCollectionView = LinkGalleryCollectionView()
-    
-    
-    
+
     func createStile() {
         
         let blur = UIBlurEffect(style: .light)
         //     let blurEffect = UIVisualEffectView(effect: blur)
         //    blurEffect.frame = view.bounds
         //  view.addSubview(blurEffect)
-        placeImageButton.layer.cornerRadius = placeImageButton.frame.height/2
-        
+        placeImage.layer.cornerRadius = placeImage.frame.height/2
         
         // to check
-        adressPlaceLabel.text = "ул. Рубинштейна, 9, Санкт-Петербург, Россия"
-        categoryLabel.text = "Bars/Restourans"
+        placeImage.backgroundColor = .black
+        adressEventLabel.text = "ул. Рубинштейна, 9, Санкт-Петербург, Россия"
+        categoryEventLabel.text = "Bars/Restourans"
         namePlaceLabel.text = "Punk Brew"
-        timeLabel.text = "22:10, 11.22.2019"
-        seeMoreImagesButton.layer.cornerRadius = seeMoreImagesButton.frame.height/2 
-        aboutPlaceTextField.layer.cornerRadius = aboutPlaceTextField.frame.height/8
+        dateEventLabel.text = "22:10, 11.22.2019"
+        albumEventButton.layer.cornerRadius = albumEventButton.frame.height/2
+        aboutEventTextView.layer.cornerRadius = aboutEventTextView.frame.height/8
         
     }
     
@@ -56,9 +53,9 @@ class EventInfoViewController: UIViewController {
         
         galleryCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         galleryCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        galleryCollectionView.topAnchor.constraint(equalTo: seeMoreImagesButton.bottomAnchor, constant: 10).isActive = true
-        galleryCollectionView.heightAnchor.constraint(equalToConstant: 50).isActive = true // высота столбца
-        //galleryCollectionView.bottomAnchor.constraint(equalTo: aboutPlaceTextField.topAnchor).isActive = true
+        galleryCollectionView.topAnchor.constraint(equalTo: albumEventButton.bottomAnchor, constant: 30).isActive = true
+        //galleryCollectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true // высота столбца
+        galleryCollectionView.bottomAnchor.constraint(equalTo: aboutEventTextView.topAnchor, constant: -20).isActive = true
         galleryCollectionView.set(cells: SushiModel.fetchSushi())
 
         

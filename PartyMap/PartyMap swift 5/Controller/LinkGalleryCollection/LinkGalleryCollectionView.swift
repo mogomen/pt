@@ -17,6 +17,8 @@ class LinkGalleryCollectionView: UICollectionView, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: LinkGalleryCollectionViewCell.reuseId, for: indexPath) as! LinkGalleryCollectionViewCell
         cell.mainImageView.image = cells[indexPath.row].mainImage
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 6
         return cell
     }
     
@@ -28,7 +30,8 @@ class LinkGalleryCollectionView: UICollectionView, UICollectionViewDataSource, U
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
         
-        backgroundColor = #colorLiteral(red: 0.9589126706, green: 0.9690223336, blue: 0.9815708995, alpha: 1)
+        
+        backgroundColor = .black
         delegate = self
         dataSource = self
         register(LinkGalleryCollectionViewCell.self, forCellWithReuseIdentifier: LinkGalleryCollectionViewCell.reuseId)
@@ -51,5 +54,13 @@ class LinkGalleryCollectionView: UICollectionView, UICollectionViewDataSource, U
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: Constants.galleryItemWidth, height: frame.height * 0.8)
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            print("one")
+        }
     }
 }
